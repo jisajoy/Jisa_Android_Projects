@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">MySportsProject</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="name">
+        <item>Talent football schools</item>
+        <item>Pro badminton academy</item>
+        <item>Talent football schools</item>
+        <item>primestar pro academy</item>
+        <item>Talent football schools</item>
+        <item>primestar pro academy</item>
+        <item>Talent football schools</item>
+        <item>Talent football schools</item>
+        <item>Talent football schools</item>
+        <item>Pro badminton academy</item>
+        <item>Talent football schools</item>
+        <item>primestar pro academy</item>
+    </string-array>
+
+    <string-array name="place">
+        <item>Abudabi</item>
+        <item>dubai</item>
+        <item>Abudabi</item>
+        <item>dubai</item>
+        <item>Abudabi</item>
+        <item>dubai</item>
+        <item>Abudabi</item>
+        <item>dubai</item>
+        <item>Abudabi</item>
+        <item>dubai</item>
+        <item>Abudabi</item>
+        <item>dubai</item>
+    </string-array>
+
+    <string-array name="date">
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+        <item>January 13th, 2017</item>
+    </string-array>
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCHyd5B6VW8YCysRvy459cEYrAZVhf-6UI</string>
+
+    <string name="hint_academy_name">Name of Academy</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_contact_person">Contact Person</string>
+    <string name="hint_website_address">Website Address</string>
+    <string name="hint_mobile">Mobile</string>
+    <string name="btn_submit">Submit</string>
+
+
+    <string name="hint_registration_name">Name</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+
+
+    <string name="about_us_heading1">Why the \'About us\' Page Rocks :</string>
+    <string name="about_us_heading2">it tells us a story.</string>
+    <string name="about_us_content1"><b>MySports.ae</b> is an online project under Smart Sports General Trading. Dubai aimed of creating an ultimate platform for Sports Lovers in the
+    region by integrating services like Venue Booking, Sports Store, Events &amp; Act as one stop online destination for all Sport's needs.</string>
+    <string name="about_us_content2"><b>MySports.ae</b> provides a user-friendly convenientonline platform for Booking indoor as well Outdoor courts, Buying Sports Gear and
+    Accessories, participate in Sports Events organised in the Region..... We aim@ creating the Smartest Sports Experience in the Region</string>
+    <string name="trainer_detail">Mr.M.J. Mohanachnadran ia an Indian International Badminton Coach who has produced many National International Badminton players from kerala
+    , a state in south India. He is an NIS(National Institute of Sports), the premier coaches &amp; rsquo; training institute in Asia and has vast experience
+     over 22 year in the feild of Badminton coaching.He is an NIS(National Institute of Sports), the premier coaches &amp; rsquo; training institute in Asia and has vast experience
+     over 22 year in the feild of Badminton coaching.Mr.M.J. Mohanachnadran ia an Indian International Badminton Coach who has produced many National International Badminton players from kerala
+    , a state in south India. He is an NIS(National Institute of Sports), the premier coaches &amp; rsquo; training institute in Asia and has vast experience
+     over 22 year in the feild of Badminton coaching.</string>
+
+
+    <string name="file_provider_authority" translatable="false">com.mysports.fileprovider</string>
+
+    <string name="youtube_api_key">AIzaSyBLuDa35o77s4FSB-H0WZRfB_KFtE37eAo</string>
+</resources>

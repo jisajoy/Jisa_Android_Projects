@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="edittext_background">#30ffffff</color>
+    <color name="button_light_background">#5cffffff</color>
+    <color name="btn_green">#53BE89</color>
+    <color name="btn_skyblue">#4FDDF3</color>
+    <color name="pitch_selection">#8CB7E2</color>
+    <color name="white">#fff</color>
+    <color name="text_hint_color">#4c8bd1</color>
+    <color name="dark_skyblue_bg">#288ACB</color>
+    <color name="edittext_color">#AAAAAA</color>
+</resources>

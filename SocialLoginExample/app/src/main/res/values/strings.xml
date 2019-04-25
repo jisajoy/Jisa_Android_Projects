@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SocialLoginExample</string>
+    <string name="android_google_login_key">18762426291-9eukq4f2v0sjpbsqtmflncvi4tq4a0k1.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">385994335462551</string>
+    <string name="fb_login_protocol_scheme">fb385994335462551</string>
+</resources>

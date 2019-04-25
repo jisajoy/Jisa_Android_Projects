@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_grey" />
+
+        <LinearLayout
+            android:id="@+id/address_no_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address No: "
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/address_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/select_address"
+                style="@style/MyCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/address_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address_no_layout"
+            android:layout_margin="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/person_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="1.5"
+                    android:text="Faisal"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Mobile Number"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/person_mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1.5"
+                    android:text="+91 7736569688"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Street Address"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/person_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1.5"
+                    android:text="Saraya avanue, Gharhood, office no: #304"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="City"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/person_city"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1.5"
+                    android:text="Dubai"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Area"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/person_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1.5"
+                    android:text="Al Karama"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Country"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/person_country"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1.5"
+                    android:text="UAE"
+                    android:textColor="@color/color_textview_black"
+                    android:textSize="16sp" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+</RelativeLayout>

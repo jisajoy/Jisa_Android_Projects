@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "18762426291",
+    "firebase_url": "https://socialloginexample-cc971.firebaseio.com",
+    "project_id": "socialloginexample-cc971",
+    "storage_bucket": "socialloginexample-cc971.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18762426291:android:1edd5dcbc55afc2b",
+        "android_client_info": {
+          "package_name": "com.jisajoy.socialloginexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18762426291-8hir1bjcrmn7nn68500ue6o93thgsbn9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jisajoy.socialloginexample",
+            "certificate_hash": "a0d5bc50893d08a624c8664807858bd2cc55291a"
+          }
+        },
+        {
+          "client_id": "18762426291-3egvliht30vdv6qkot6ctnb3vi5drjnt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNXTC_EBQeiH4kRvb2WsN1hMfdAKAXb0I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18762426291-3egvliht30vdv6qkot6ctnb3vi5drjnt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

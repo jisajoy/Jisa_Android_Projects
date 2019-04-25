@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/venue_provider_toolbar"
+            layout="@layout/custom_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/venue_provider_toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <com.mysports.utilities.CustomTextInputLayout
+                        android:id="@+id/input_layout_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@color/color_textview_black">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/input_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_custom_border_grey"
+                            android:singleLine="true"
+                            android:inputType="textPersonName"
+                            android:textColorHint="@android:color/transparent"
+                            android:textSize="15sp" />
+                    </com.mysports.utilities.CustomTextInputLayout>
+                    <!--  <View
+                          android:layout_width="match_parent"
+                          android:layout_height="0.5dp"
+                          android:background="@color/color_custom_border_grey" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.AppCompatSpinner
+                                android:id="@+id/spinner_state"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/no_border_spinner"
+                                android:overlapAnchor="false"
+                                android:spinnerMode="dropdown" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/color_custom_border_grey" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/current_location"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:src="@drawable/location_marker" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="Use my Current Location"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <com.mysports.utilities.CustomTextInputLayout
+                        android:id="@+id/input_layout_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColorHint="@color/color_textview_black">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/input_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_custom_border_grey"
+                            android:hint="@string/hint_email"
+                            android:inputType="textEmailAddress"
+                            android:textColorHint="@color/color_textview_black"
+                            android:textSize="15sp" />
+                    </com.mysports.utilities.CustomTextInputLayout>
+
+                    <com.mysports.utilities.CustomTextInputLayout
+                        android:id="@+id/input_layout_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColorHint="@color/color_textview_black">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/input_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_custom_border_grey"
+                            android:hint="@string/hint_phone"
+                            android:inputType="phone"
+                            android:textColorHint="@color/color_textview_black"
+                            android:textSize="15sp" />
+                    </com.mysports.utilities.CustomTextInputLayout>
+
+                    <!-- <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:background="@color/color_custom_border_grey" />-->
+                    <!-- <android.support.design.widget.TextInputLayout
+                         android:id="@+id/input_layout_password"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content">
+
+                         <EditText
+                             android:id="@+id/input_password"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:hint="@string/hint_phone"
+                             android:inputType="textPassword" />
+                     </android.support.design.widget.TextInputLayout>-->
+
+                    <com.mysports.utilities.CustomTextInputLayout
+                        android:id="@+id/input_layout_contact_person"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColorHint="@color/color_textview_black">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/input_contact_person"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_custom_border_grey"
+                            android:hint="@string/hint_contact_person"
+                            android:inputType="textPersonName"
+                            android:textColorHint="@color/color_textview_black"
+                            android:textSize="15sp" />
+                    </com.mysports.utilities.CustomTextInputLayout>
+
+                    <!-- <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:background="@color/color_custom_border_grey" />-->
+
+                    <com.mysports.utilities.CustomTextInputLayout
+                        android:id="@+id/input_layout_website_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColorHint="@color/color_textview_black">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/input_website_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_custom_border_grey"
+                            android:hint="@string/hint_website_address"
+                            android:inputType="textWebEditText"
+                            android:textColorHint="@color/color_textview_black"
+                            android:textSize="15sp" />
+                    </com.mysports.utilities.CustomTextInputLayout>
+
+                    <!-- <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:background="@color/color_custom_border_grey" />
+         -->
+
+                    <com.mysports.utilities.CustomTextInputLayout
+                        android:id="@+id/input_layout_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColorHint="@color/color_textview_black">
+
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/input_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_custom_border_grey"
+                            android:hint="@string/hint_mobile"
+                            android:inputType="number"
+                            android:textColorHint="@color/color_textview_black"
+                            android:textSize="15sp" />
+                    </com.mysports.utilities.CustomTextInputLayout>
+
+                    <!-- <View
+                         android:layout_width="match_parent"
+                         android:layout_height="0.5dp"
+                         android:background="@color/color_custom_border_grey" />-->
+
+                    <RelativeLayout
+                        android:id="@+id/submit_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="40dp"
+                        android:background="@drawable/red_button"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/btn_signup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="70dp"
+                            android:layout_marginRight="70dp"
+                            android:layout_marginTop="15dp"
+                            android:text="@string/btn_submit"
+                            android:textColor="@android:color/white" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

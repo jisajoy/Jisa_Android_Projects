@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mysports.fragments.LoginFragment">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="188dp" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15">
+
+            <com.mysports.utilities.CustomTextInputLayout
+                android:id="@+id/user_name_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/color_textview_black">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/input_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/color_custom_border_grey"
+                    android:hint="User Name"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/color_textview_black"
+                    android:textSize="15sp" />
+
+            </com.mysports.utilities.CustomTextInputLayout>
+
+            <com.mysports.utilities.CustomTextInputLayout
+                android:id="@+id/password_material"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_name_material"
+                android:layout_marginTop="5dp">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/input_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/color_custom_border_grey"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/color_textview_black"
+                    android:textSize="15sp" />
+
+            </com.mysports.utilities.CustomTextInputLayout>
+
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/password_material"
+                android:layout_marginTop="20dp"
+                android:text="Forgot Password?" />
+
+            <RelativeLayout
+                android:id="@+id/login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forgot_password"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/red_button"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/btn_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorAccent" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</FrameLayout>

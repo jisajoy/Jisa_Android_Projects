@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_spots_store"
+            android:icon="@drawable/ic_store_black"
+            android:title="My Sports Store" />
+        <item
+            android:id="@+id/nav_academics"
+            android:icon="@drawable/ic_academics_black"
+            android:title="Academics" />
+        <item
+            android:id="@+id/nav_tournament"
+            android:icon="@drawable/ic_tour_black"
+            android:title="Tournament" />
+        <item
+            android:id="@+id/nav_listwithus"
+            android:icon="@drawable/ic_listwithus_black"
+            android:title="List With Us" />
+        <item
+            android:id="@+id/nav_myaccount"
+            android:icon="@drawable/ic_myaccount_black"
+            android:title="My Account" />
+        <item
+            android:id="@+id/nav_mywallet"
+            android:icon="@drawable/ic_wallet_black"
+            android:title="My Wallet" />
+        <item
+            android:id="@+id/nav_mytournament"
+            android:icon="@drawable/ic_tour_black"
+            android:title="My Tournament" />
+        <item
+            android:id="@+id/nav_myfavourite"
+            android:icon="@drawable/ic_fav_black"
+            android:title="My Favorites" />
+        <item
+            android:id="@+id/nav_aboutus"
+            android:icon="@drawable/ic_trainer_black"
+            android:title="About Us" />
+        <item
+            android:id="@+id/nav_trainers"
+            android:icon="@drawable/ic_about_black"
+            android:title="Trainers" />
+    </group>
+</menu>

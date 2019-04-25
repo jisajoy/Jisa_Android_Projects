@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#CA2027</color>
+    <color name="colorPrimaryDark">#9E151A</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="color_dashboard_green">#8BD165</color>
+    <color name="color_dashboard_yellow">#DDC747</color>
+    <color name="color_dashboard_blue">#457096</color>
+    <color name="color_dashboard_red">#E03636</color>
+    <color name="color_view_ash">#c2bebe</color>
+    <color name="color_view_detail_background">#F2F2F2</color>
+    <color name="color_textview_black">#2d2c2c</color>
+    <color name="color_view">#706d6d</color>
+    <color name="color_custom_border_black">#949090</color>
+    <color name="color_custom_border_grey">#E1E1E3</color>
+    <color name="color_off_white_background">#F2F2F2</color>
+    <color name="color_grey">#b4b5b6</color>
+    <color name="color_aboutus_background">#F2F2F2</color>
+    <color name="color_about_us">#212121</color>
+    <color name="color_sky_blue_text">#4AA5BD</color>
+    <color name="color_ash_grey_trans">#820d0d0d</color>
+    <color name="color_maintab">#343434</color>
+    <color name="transparent_black">#5a000000</color>
+    <color name="grey_shade_cart">#E6E6E6</color>
+</resources>
