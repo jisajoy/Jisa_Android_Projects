@@ -42,25 +42,20 @@ import com.facebook.appevents.AppEventsLogger;
 import java.util.Arrays;
 import java.util.Collection;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
-    Button mGoogleLoginBtn;
-    Button mFacebookLoginBtn;
-    Button mTwitterLoginBtn;
-    TextView mName;
-    TextView mUserName;
-    TextView mEmailId;
-    TextView userId;
-    TextView phoneNumber;
-    ImageView mProfilePhoto;
     CallbackManager mCallbackManager;
     LoginManager loginManager;
     FirebaseAuth mAuth;
 
-    LoginMvpPresenter mPresenter;
+    @Inject
+SocialLoginManager socialLoginManager;
+
 
     @BindView(R.id.emailid_login)
     EditText mEmailEditText;
@@ -85,12 +80,14 @@ public class MainActivity extends BaseActivity {
        mAuth = FirebaseAuth.getInstance();
         setUnBinder(ButterKnife.bind(this));
 
-       mPresenter = new MainActivity();
+        SocialLoginComponent socialLoginComponent = DaggerSocialLoginComponent.create();
+        socialLoginComponent.getLoginObject(this);
+        socialLoginManager.setContext(this);
     }
 
     @OnClick(R.id.login_btn)
     void onServerLoginClick(View v) {// click to the login button
-        mPresenter.onServerLoginClick(mEmailEditText.getText().toString(),
+        socialLoginManager.serverLogin(mEmailEditText.getText().toString(),
                 mPasswordEditText.getText().toString());
     }
 
@@ -111,34 +108,36 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.facebook_login)
     void onFbLoginClick(View v) {
-        mCallbackManager = CallbackManager.Factory.create();
-        loginManager = LoginManager.getInstance();
-        loginManager.logInWithReadPermissions(this, permissions);
-        loginManager.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                if (loginResult != null) {
-                    handleFacebookAccessToken(loginResult.getAccessToken());
-                }
-            }
-
-            @Override
-            public void onCancel() {
-                //progressDialog.dismiss();
-                // fbSignInListener.OnFbSignInComplete(null, "User cancelled.");
-            }
-
-            @Override
-            public void onError(FacebookException exception) {
-                if (exception instanceof FacebookAuthorizationException) {
-                    if (AccessToken.getCurrentAccessToken() != null) {
-                        LoginManager.getInstance().logOut();
+        if (currentFacebookUser == null) {
+            mCallbackManager = CallbackManager.Factory.create();
+            loginManager = LoginManager.getInstance();
+            loginManager.logInWithReadPermissions(this, permissions);
+            loginManager.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                @Override
+                public void onSuccess(LoginResult loginResult) {
+                    if (loginResult != null) {
+                        handleFacebookAccessToken(loginResult.getAccessToken());
                     }
-                    //progressDialog.dismiss();
                 }
-                // fbSignInListener.OnFbSignInComplete(null, exception.getMessage());
-            }
-        });
+
+                @Override
+                public void onCancel() {
+
+                }
+
+                @Override
+                public void onError(FacebookException exception) {
+                    if (exception instanceof FacebookAuthorizationException) {
+                        if (AccessToken.getCurrentAccessToken() != null) {
+                            LoginManager.getInstance().logOut();
+                        }
+                    }
+
+                }
+            });
+        }else {
+            socialLoginManager.facebookLogin(currentFacebookUser);
+        }
     }
 
     private void handleFacebookAccessToken(AccessToken accessToken) {
@@ -153,8 +152,8 @@ public class MainActivity extends BaseActivity {
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             //progressDialog.dismiss();
-                            UIwithFacebookLogin(user);
-
+                            //UIwithFacebookLogin(user);
+                            socialLoginManager.facebookLogin(user);
                         } else {
                             //progressDialog.dismiss();
                             // If sign in fails, display a message to the user.
@@ -168,72 +167,28 @@ public class MainActivity extends BaseActivity {
                     }
                 });
     }
-    private void UIwithFacebookLogin(FirebaseUser user) {
-        //  System.out.println("user_val" + mFbUserId);
-        System.out.println("user_name" +user.getDisplayName());
-        System.out.println("user_email" + user.getEmail());
-        System.out.print("phone_number"+user.getPhoneNumber());
-        System.out.println("photo_url"+user.getPhotoUrl());
-        //MyApplication.faceBookEmailId=user.getEmail();
-        //MyApplication.facebookUserName=user.getDisplayName();
-
-//        Toast.makeText(this, ""+user.getEmail(), Toast.LENGTH_SHORT).show();
-//        mFBemailId = user.getEmail();
-//        mFBUserName = user.getDisplayName();
-
-
-
-    }
+    FirebaseUser currentFacebookUser;
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            UIwithFacebookLogin(currentUser);
+            currentFacebookUser = currentUser;
         }
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d("resultvalue", requestCode+" "+resultCode);
         if (resultCode == RESULT_OK) {
-            // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
             if (requestCode == RC_SIGN_IN) {
-                // The Task returned from this call is always completed, no need to attach
-                // a listener.
                 Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-                handleSignInResult(task);
+                socialLoginManager.googleLogin(task);
             }else {
                 mCallbackManager.onActivityResult(requestCode, resultCode, data);
             }
 
 
         }
-    }
-
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
-            // Signed in successfully, show authenticated UI.
-            updateUI(account);
-        } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            updateUI(null);
-        }
-    }
-
-
-    private void updateUI(GoogleSignInAccount currentUser) {
-        //Picasso.with(this).load(currentUser.getPhotoUrl()).centerInside().into(mProfilePhoto);
-        mName.setText(currentUser.getDisplayName());
-        mUserName.setText(currentUser.getGivenName());
-        mEmailId.setText(currentUser.getEmail());
-        userId.setText(currentUser.getIdToken());
-        phoneNumber.setText(currentUser.getServerAuthCode());
     }
 
     @Override
