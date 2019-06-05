@@ -18,7 +18,7 @@ it had following components.
 3. Dagger 2 framework
 4. Google and facebook login for used details fetching
 
-Todo App project is for add, edite, delete list of todo items. it had following components included
+Todo App project is for add, edit, delete list of todo items. it had following components included
 1. MVVM Architecture
 2. Live Data
 3. Room
